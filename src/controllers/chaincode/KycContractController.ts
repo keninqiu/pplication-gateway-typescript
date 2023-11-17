@@ -1,5 +1,6 @@
 import KycContractService from "../../services/chaincode/KycContractService";
-import express, { Express, Request, Response } from 'express';
+import { Request, Response } from 'express';
+
 class KycContractController {
     static async createKyc(req: Request, res: Response) {
         try {

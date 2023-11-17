@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
 import KycRoute from './KycRoute';
 import FabConnectRoute from './FabConnectRoute';
-import ChainCodeRoute from './ChainCodeRoute';
+import ChainCodeRoute from './chaincode';
 
 const app: Express = express();
 
