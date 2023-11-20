@@ -2,7 +2,7 @@
 import { newGrpcConnection, newIdentity, newSigner } from '../connect';
 import { ChaincodeEvent, CloseableAsyncIterable, connect, Contract, GatewayError, Network } from '@hyperledger/fabric-gateway';
 
-const channelName = 'dnbchannel';
+const channelName = 'bondchannel';
 const chaincodeName = 'bond';
 
 class ChainCodeService {

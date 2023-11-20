@@ -14,7 +14,7 @@ import Db from './utils/Db';
 import KycService from './services/KycService';
 
 dotevnv.config()
-const channelName = 'dnbchannel';
+const channelName = 'bondchannel';
 const chaincodeName = 'bond';
 
 const utf8Decoder = new TextDecoder();
