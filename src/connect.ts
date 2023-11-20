@@ -80,10 +80,7 @@ export async function newSigner(org: string = 'paycool'): Promise<Signer> {
     const files = await fs.readdir(getKeyDirectoryPath(org));
     const keyPath = path.resolve(getKeyDirectoryPath(org), files[0]);
     const privateKeyPem = await fs.readFile(keyPath);
-    console.log('privateKeyPem===', privateKeyPem);
     const privateKey = crypto.createPrivateKey(privateKeyPem);
-    console.log('privateKey===', privateKey);
     const signer = signers.newPrivateKeySigner(privateKey);
-    console.log('signer===', signer);
     return signer;
 }

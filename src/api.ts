@@ -3,8 +3,10 @@ import * as dotevnv from "dotenv"
 import cors from "cors"
 import helmet from "helmet"
 import api from './routes';
+import Db from './utils/Db';
 dotevnv.config()
 
+Db.startconnection(1);
 if (!process.env.PORT) {
     console.log(`No port value specified...`)
 }

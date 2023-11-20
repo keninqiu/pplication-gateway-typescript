@@ -15,7 +15,7 @@ import KycService from './services/KycService';
 
 dotevnv.config()
 const channelName = 'dnbchannel';
-const chaincodeName = 'kyc';
+const chaincodeName = 'bond';
 
 const utf8Decoder = new TextDecoder();
 
@@ -110,9 +110,9 @@ async function replayChaincodeEvents(network: Network): Promise<void> {
                     await KycService.createKyc(payload);
                     break;
                 case 'KYCStatusUpdated':
-                    const ID = payload.ID;
+                    const id = payload.id ? payload.id : payload.ID;
                     const status = payload.status;
-                    await KycService.updateKycStauts(ID, status);
+                    await KycService.updateKycStauts(id, status);
                     break;      
             }
             console.log(`\n<-- Chaincode event replayed: ${event.eventName} -`, payload);

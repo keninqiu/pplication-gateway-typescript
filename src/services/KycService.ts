@@ -1,8 +1,8 @@
 import KycModel from '../models/KycModel';
 
 class KycService {
-    static async updateKycStauts(ID: string, status: number) {
-        const newKyc = await KycModel.findOneAndUpdate({ID}, {status});
+    static async updateKycStauts(id: string, status: number) {
+        const newKyc = await KycModel.findOneAndUpdate({id}, {status});
         return newKyc;
     }
 
@@ -12,7 +12,9 @@ class KycService {
     }
 
     static async getKycs(pageSize: number, pageNum: number) {
+
         const kycs = await KycModel.find({}).sort({_id: -1}).limit(pageSize).skip(pageSize * pageNum);
+
         return kycs;
     }
 }

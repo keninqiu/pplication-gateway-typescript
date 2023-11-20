@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 
 const KycSchema = new Schema({
-    ID: String,
+    id: String,
     email: String,
     phone: String,
     citizenship: String,
